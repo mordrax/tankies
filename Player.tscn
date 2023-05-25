@@ -36,7 +36,7 @@ radius = 54.0
 height = 136.0
 
 [node name="Player" type="Area2D"]
-position = Vector2(1, 4)
+position = Vector2(0, 4)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ictx5")
 metadata/_edit_group_ = true
@@ -47,3 +47,5 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yktn5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
