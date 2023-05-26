@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b46s1f31c1vp3"]
+[gd_scene load_steps=10 format=3 uid="uid://b46s1f31c1vp3"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_5avrs"]
 [ext_resource type="Texture2D" uid="uid://c0oihqh6w75da" path="res://art/enemyWalking_1.png" id="1_bxegm"]
@@ -44,13 +44,23 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0xfs"]
+radius = 37.0
+height = 96.0
+
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 2.66454e-15
 script = ExtResource("1_5avrs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 0)
+rotation = 1.5708
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_nvclr")
 animation = &"walk"
 frame_progress = 0.182624
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("CapsuleShape2D_v0xfs")
