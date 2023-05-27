@@ -13,7 +13,6 @@ offset_right = 290.0
 offset_bottom = 124.0
 theme_override_fonts/font = ExtResource("1_2au4r")
 theme_override_font_sizes/font_size = 64
-text = "50"
 
 [node name="Message" type="Label" parent="."]
 offset_left = 64.0
