@@ -16,6 +16,9 @@ func show_game_over():
 	await $MessageTimer.timeout
 
 	$Message.text = "Dodge the\nCreeps!"
+	$TitleScreenImg1.show()
+	$TitleScreenImg2.show()
+	
 	$ScoreLabel.hide()
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
@@ -28,8 +31,10 @@ func update_score(score):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	$TitleScreenImg1.animation = "default"
+	$TitleScreenImg1.play()
+	$TitleScreenImg2.animation = "default"
+	$TitleScreenImg2.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,7 +43,10 @@ func _process(delta):
 func _on_start_button_pressed():
 	$StartButton.hide()
 	$Message.hide()
+	$TitleScreenImg1.hide()
+	$TitleScreenImg2.hide()
 	$ScoreLabel.show()
+
 	start_game.emit()
 
 func _on_message_timer_timeout():

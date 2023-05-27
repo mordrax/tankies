@@ -17,11 +17,12 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
-
+	
 func new_game():
 	score = 0
 	$HUD.update_score(score)
-	$Player.start($StartPosition.position)	
+	$Player.start($StartPosition.position)
+	$player2.start(Vector2($StartPosition.position.x + 50, $StartPosition.position.y))
 	$StartTimer.start()
 
 func _on_start_timer_timeout():

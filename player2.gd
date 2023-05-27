@@ -16,13 +16,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector. (0,0)
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("d"):
 		velocity.x += 1 # (1,0)
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("a"):
 		velocity.x -= 1
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("s"):
 		velocity.y += 1
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("w"):
 		velocity.y -= 1
 
 	if velocity.length() > 0:
